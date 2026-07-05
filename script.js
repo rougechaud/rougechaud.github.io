@@ -65,33 +65,33 @@ const TRANSLATIONS = {
   en: {
     role:        "styling & visual studio",
     bio:         "A styling and visual studio moving between parties, artists and brands. We believe the best looks feel grown rather than made — pairing design thinking with engineering to shape looks, performances and the systems that run them.",
-    hint:        "scroll_to_enter",
+    hint:        "scroll to enter",
 
     k_theme:     "[THEME]",
     k_material:  "[MATERIAL]",
     k_workflow:  "[WORKFLOW]",
 
     p1_index:    "CH.01 // MIDSUMMER",
-    p1_theme:    "Immersive_Night_Party_·_Sci-Fi",
-    p1_workflow: "Costume_Design_·_Making_·_Performance",
-    p1_decoded:  "signal_locked · press_feature",
+    p1_theme:    "Immersive Night Party · Sci-Fi",
+    p1_workflow: "Costume Design · Making · Acting Design",
+    p1_decoded:  "signal locked · press feature",
 
     p2_index:    "CH.02 // DAYDREAM",
-    p2_theme:    "Christmas_Daydream",
-    p2_workflow: "Costume_Design_·_Making_·_Performance",
-    p2_decoded:  "signal_locked · daydream_in_motion → live",
+    p2_theme:    "Christmas Daydream",
+    p2_workflow: "Costume Design · Making · Acting Design",
+    p2_decoded:  "signal locked · daydream in motion → live",
 
     p3_index:    "CH.03 // ARTIST",
-    p3_theme:    "Commercial_Styling_·_Artist",
-    p3_workflow: "Styling_Design_·_Consulting",
-    p3_decoded:  "signal_locked · artist_jane_liu",
+    p3_theme:    "Commercial Styling · Artist",
+    p3_workflow: "Styling Design · Consulting",
+    p3_decoded:  "signal locked · artist jane liu",
 
     p4_index:    "CH.04 // PARASOL",
-    p4_theme:    "Commercial_Styling_·_Total_Look",
-    p4_workflow: "Styling_Design_·_Consulting",
-    p4_decoded:  "signal_locked · yoreh_in_market",
+    p4_theme:    "Commercial Styling · Total Look",
+    p4_workflow: "Styling Design · Consulting",
+    p4_decoded:  "signal locked · yoreh in market",
 
-    outro_label: "transmission_end // reach_me",
+    outro_label: "transmission end // reach me",
     signature:   "Sara · Visual Director",
 
     status: {
@@ -105,31 +105,31 @@ const TRANSLATIONS = {
   zh: {
     role:        "造型視覺設計工作室",
     bio:         "一間造型與視覺設計工作室,遊走於派對、藝術家與品牌之間。我們相信最好的造型如生長而成,而非被製造 —— 以設計思維結合工程能力,打造造型、表演與其運作的系統。",
-    hint:        "捲動_進入",
+    hint:        "捲動 進入",
 
     k_theme:     "[主題]",
     k_material:  "[材質]",
     k_workflow:  "[流程]",
 
     p1_index:    "第01章 // 仲夏夜",
-    p1_theme:    "沉浸式夜間派對_·_科幻",
-    p1_workflow: "造型設計_·_製作_·_表演",
-    p1_decoded:  "訊號鎖定 · 媒體報導_Shopping Design",
+    p1_theme:    "沉浸式夜間派對 · 科幻",
+    p1_workflow: "造型設計 · 製作 · 表演設計",
+    p1_decoded:  "訊號鎖定 · 媒體報導 Shopping Design",
 
     p2_index:    "第02章 // 白日夢",
     p2_theme:    "聖誕白日夢",
-    p2_workflow: "造型設計_·_製作_·_表演",
-    p2_decoded:  "訊號鎖定 · 白日夢_已登場 → 現場",
+    p2_workflow: "造型設計 · 製作 · 表演設計",
+    p2_decoded:  "訊號鎖定 · 白日夢 已登場 → 現場",
 
     p3_index:    "第03章 // 藝術家",
-    p3_theme:    "商業造型_·_藝術家形象",
-    p3_workflow: "造型設計_·_顧問諮詢",
-    p3_decoded:  "訊號鎖定 · 藝術家_Jane_Liu",
+    p3_theme:    "商業造型 · 藝術家形象",
+    p3_workflow: "造型設計 · 顧問諮詢",
+    p3_decoded:  "訊號鎖定 · 藝術家 Jane Liu",
 
     p4_index:    "第04章 // 傘",
-    p4_theme:    "商業造型_·_整體造型",
-    p4_workflow: "造型設計_·_顧問諮詢",
-    p4_decoded:  "訊號鎖定 · Yoreh雨傘_實際販售中",
+    p4_theme:    "商業造型 · 整體造型",
+    p4_workflow: "造型設計 · 顧問諮詢",
+    p4_decoded:  "訊號鎖定 · Yoreh雨傘 實際販售中",
 
     outro_label: "傳輸結束 // 聯繫我",
     signature:   "Sara · 視覺總監",
@@ -753,3 +753,4 @@ function init() {
 }
 
 init();
+
