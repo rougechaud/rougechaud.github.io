@@ -528,7 +528,7 @@ const outro = {
     octx.fillText("EMAIL", w / 2, h * 0.42);
     octx.font = `${(big * 0.34).toFixed(0)}px monospace`;
     // ===== CHANGE YOUR EMAIL HERE (canvas copy of the address) =====
-    octx.fillText("example@email.com", w / 2, h * 0.42 + big * 0.75);
+    octx.fillText("7chaud@gmail.com", w / 2, h * 0.42 + big * 0.75);
 
     const data = octx.getImageData(0, 0, w, h).data;
     const targets = [];
