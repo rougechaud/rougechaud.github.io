@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- lang attribute is kept in sync by script.js (i18n) -->
+<html lang="en">
+<head>
+  <!-- ============================================================
+       META / SEO
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== CHANGE YOUR NAME / TITLE HERE ===== -->
+  <title>Rouge chauD — Styling &amp; Visual Direction</title>
+
+  <!-- ===== CHANGE YOUR META DESCRIPTION HERE ===== -->
+  <meta name="description" content="Rouge chauD — costume and visual styling for immersive parties, artists and brands, by a designer who is also a software engineer." />
+
+  <meta name="theme-color" content="#1C1613" />
+
+  <!-- Open Graph -->
+  <!-- ===== CHANGE YOUR OG DATA HERE ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rouge chauD — Styling & Visual Direction" />
+  <meta property="og:description" content="Costume and visual styling for immersive parties, artists and brands — a quiet practice carried by a software engineer's hands." />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:image" content="https://your-domain.com/og-cover.jpg" />
+
+  <!-- Twitter Card -->
+  <!-- ===== CHANGE YOUR TWITTER DATA HERE ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rouge chauD — Styling & Visual Direction" />
+  <meta name="twitter:description" content="Costume and visual styling for immersive parties, artists and brands — a quiet practice carried by a software engineer's hands." />
+  <meta name="twitter:image" content="https://your-domain.com/og-cover.jpg" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.png" sizes="48x48" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- JSON-LD Person schema -->
+  <!-- ===== CHANGE YOUR SCHEMA DATA HERE ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sara",
+    "alternateName": "Rouge chauD",
+    "jobTitle": "Styling & Visual Director",
+    "url": "https://your-domain.com/",
+    "email": "7chaud@gmail.com"
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-mode="hero">
+
+  <!-- ============================================================
+       ATMOSPHERE LAYERS (grain / vignette / scanlines)
+       Fixed, pointer-events: none — purely decorative.
+       ============================================================ -->
+  <div class="atmo atmo--grain"     aria-hidden="true"></div>
+  <div class="atmo atmo--vignette"  aria-hidden="true"></div>
+  <div class="atmo atmo--scanlines" aria-hidden="true"></div>
+
+  <!-- Ambient particle field (desktop only, driven by script.js) -->
+  <canvas id="particle-field" class="particle-field" aria-hidden="true"></canvas>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <!-- ===== CHANGE YOUR LOGO HERE ===== -->
+    <a class="logo mono" href="#hero" aria-label="Back to top — Rouge chauD">RC/26</a>
+
+    <div class="header__right">
+      <!-- ========== LANGUAGE TOGGLE (EN / 中) ========== -->
+      <button id="lang-toggle" class="lang-toggle mono" type="button"
+              aria-label="Switch language / 切換語言">
+        <span class="lang-toggle__opt" data-lang-opt="en">EN</span>
+        <span class="lang-toggle__sep" aria-hidden="true">/</span>
+        <span class="lang-toggle__opt" data-lang-opt="zh">中</span>
+      </button>
+
+      <!-- System status badge, top-right -->
+      <p class="system-badge mono" aria-live="polite">
+        <span class="system-badge__dot" aria-hidden="true"></span>
+        <span id="system-status">[SYSTEM READY]</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main id="main">
+
+    <!-- ==========================================================
+         HERO — cinematic opening screen
+         ========================================================== -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <div class="hero__inner">
+        <!-- ===== CHANGE YOUR ROLE HERE ===== -->
+        <p class="hero__role mono" data-i18n="role">styling & visual studio</p>
+
+        <!-- ===== CHANGE YOUR NAME HERE (proper noun — not translated) ===== -->
+        <h1 class="hero__name" id="hero-name">
+          <span class="hero__name-line">Rouge</span>
+          <span class="hero__name-line">chauD</span>
+        </h1>
+
+        <!-- ===== CHANGE YOUR BIOGRAPHY HERE ===== -->
+        <p class="hero__bio" data-i18n="bio">
+          A styling and visual studio moving between parties, artists and brands.
+          We believe the best looks feel grown rather than made — pairing design
+          thinking with engineering to shape looks, performances and the systems
+          that run them.
+        </p>
+      </div>
+
+      <!-- Scroll hint, bottom center -->
+      <p class="hero__hint mono" aria-hidden="true">
+        <span class="hero__hint-line"></span><span data-i18n="hint">scroll_to_enter</span>
+      </p>
+    </section>
+
+    <!-- ==========================================================
+         PROJECTS — infinite tunnel (desktop) / stacked cards (mobile)
+         The tall wrapper provides scroll distance;
+         the sticky stage is the 3D viewport.
+         ========================================================== -->
+    <section id="tunnel" class="tunnel" aria-label="Selected projects">
+      <div class="tunnel__stage" id="tunnel-stage">
+
+        <!-- ======================= PROJECT 01 ======================= -->
+        <article class="chapter" data-chapter="0" aria-labelledby="p1-title">
+          <div class="card">
+            <!-- ===== CHANGE THIS THEME'S PHOTOS HERE (comma-separated) ===== -->
+            <figure class="card__figure" data-carousel
+                    data-images="img/1-1.jpg,img/1-2.jpg,img/1-3.jpg,img/1-4.jpg"
+                    style="--card-img:url('img/1-1.jpg')">
+              <img class="card__img" src="img/1-1.jpg" loading="lazy"
+                   alt="Immersive party costume and performance styling — A Midsummer Night's Dream" />
+              <!-- Glitch layers reuse the current slide via the --card-img variable -->
+              <div class="card__glitch card__glitch--r" aria-hidden="true"></div>
+              <div class="card__glitch card__glitch--b" aria-hidden="true"></div>
+              <div class="card__interference" aria-hidden="true"></div>
+              <div class="card__noise" aria-hidden="true"></div>
+              <button class="carousel__nav carousel__nav--prev mono" type="button" aria-label="Previous image">‹</button>
+              <button class="carousel__nav carousel__nav--next mono" type="button" aria-label="Next image">›</button>
+              <div class="carousel__dots" role="tablist" aria-label="Image navigation"></div>
+            </figure>
+
+            <div class="card__panel mono">
+              <!-- ===== CHANGE PROJECT TEXT HERE ===== -->
+              <h2 class="card__index" id="p1-title" data-i18n="p1_index">CH.01 // MIDSUMMER</h2>
+              <ul class="telemetry" data-telemetry>
+                <li class="telemetry__row"><span class="telemetry__key" data-i18n="k_theme">[THEME]</span><span class="telemetry__val" data-decode data-i18n="p1_theme">Immersive_Night_Party_·_Sci-Fi</span></li>
+                <li class="telemetry__row"><span class="telemetry__key" data-i18n="k_workflow">[WORKFLOW]</span><span class="telemetry__val" data-decode data-i18n="p1_workflow">Costume_Design_·_Making_·_Performance</span></li>
+              </ul>
+              <a class="card__decoded card__decoded--link" data-i18n="p1_decoded"
+                 href="https://www.shoppingdesign.com.tw/post/view/8133" rel="noopener" target="_blank">signal_locked · press_feature</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ======================= PROJECT 02 ======================= -->
+        <article class="chapter" data-chapter="1" aria-labelledby="p2-title">
+          <div class="card">
+            <!-- ===== CHANGE THIS THEME'S PHOTOS HERE (comma-separated) ===== -->
+            <figure class="card__figure" data-carousel
+                    data-images="img/2-1.jpg,img/2-2.jpg"
+                    style="--card-img:url('img/2-1.jpg')">
+              <img class="card__img" src="img/2-1.jpg" loading="lazy"
+                   alt="Christmas daydream party — costume and performance styling" />
+              <div class="card__glitch card__glitch--r" aria-hidden="true"></div>
+              <div class="card__glitch card__glitch--b" aria-hidden="true"></div>
+              <div class="card__interference" aria-hidden="true"></div>
+              <div class="card__noise" aria-hidden="true"></div>
+              <button class="carousel__nav carousel__nav--prev mono" type="button" aria-label="Previous image">‹</button>
+              <button class="carousel__nav carousel__nav--next mono" type="button" aria-label="Next image">›</button>
+              <div class="carousel__dots" role="tablist" aria-label="Image navigation"></div>
+            </figure>
+
+            <div class="card__panel mono">
+              <!-- ===== CHANGE PROJECT TEXT HERE ===== -->
+              <h2 class="card__index" id="p2-title" data-i18n="p2_index">CH.02 // DAYDREAM</h2>
+              <ul class="telemetry" data-telemetry>
+                <li class="telemetry__row"><span class="telemetry__key" data-i18n="k_theme">[THEME]</span><span class="telemetry__val" data-decode data-i18n="p2_theme">Christmas_Daydream</span></li>
+                <li class="telemetry__row"><span class="telemetry__key" data-i18n="k_workflow">[WORKFLOW]</span><span class="telemetry__val" data-decode data-i18n="p2_workflow">Costume_Design_·_Making_·_Performance</span></li>
+              </ul>
+              <p class="card__decoded" data-i18n="p2_decoded">signal_locked · daydream_in_motion → live</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ======================= PROJECT 03 ======================= -->
+        <article class="chapter" data-chapter="2" aria-labelledby="p3-title">
+          <div class="card">
+            <!-- ===== CHANGE THIS THEME'S PHOTOS HERE (comma-separated) ===== -->
+            <figure class="card__figure" data-carousel
+                    data-images="img/3-1.jpg,img/3-2.jpg,img/3-3.jpg,img/3-4.jpg"
+                    style="--card-img:url('img/3-1.jpg')">
+              <img class="card__img" src="img/3-1.jpg" loading="lazy"
+                   alt="Commercial styling for artist Jane Liu" />
+              <div class="card__glitch card__glitch--r" aria-hidden="true"></div>
+              <div class="card__glitch card__glitch--b" aria-hidden="true"></div>
+              <div class="card__interference" aria-hidden="true"></div>
+              <div class="card__noise" aria-hidden="true"></div>
+              <button class="carousel__nav carousel__nav--prev mono" type="button" aria-label="Previous image">‹</button>
+              <button class="carousel__nav carousel__nav--next mono" type="button" aria-label="Next image">›</button>
+              <div class="carousel__dots" role="tablist" aria-label="Image navigation"></div>
+            </figure>
+
+            <div class="card__panel mono">
+              <!-- ===== CHANGE PROJECT TEXT HERE ===== -->
+              <h2 class="card__index" id="p3-title" data-i18n="p3_index">CH.03 // ARTIST</h2>
+              <ul class="telemetry" data-telemetry>
+                <li class="telemetry__row"><span class="telemetry__key" data-i18n="k_theme">[THEME]</span><span class="telemetry__val" data-decode data-i18n="p3_theme">Commercial_Styling_·_Artist</span></li>
+                <li class="telemetry__row"><span class="telemetry__key" data-i18n="k_workflow">[WORKFLOW]</span><span class="telemetry__val" data-decode data-i18n="p3_workflow">Styling_Design_·_Consulting</span></li>
+              </ul>
+              <a class="card__decoded card__decoded--link" data-i18n="p3_decoded"
+                 href="https://www.facebook.com/janeliuyi.official/" rel="noopener" target="_blank">signal_locked · artist_jane_liu</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ======================= PROJECT 04 ======================= -->
+        <article class="chapter" data-chapter="3" aria-labelledby="p4-title">
+          <div class="card">
+            <!-- ===== CHANGE THIS THEME'S PHOTOS HERE (comma-separated) ===== -->
+            <figure class="card__figure" data-carousel
+                    data-images="img/4-1.jpg,img/4-2.jpg"
+                    style="--card-img:url('img/4-1.jpg')">
+              <img class="card__img" src="img/4-1.jpg" loading="lazy"
+                   alt="Commercial styling — Yoreh umbrella" />
+              <div class="card__glitch card__glitch--r" aria-hidden="true"></div>
+              <div class="card__glitch card__glitch--b" aria-hidden="true"></div>
+              <div class="card__interference" aria-hidden="true"></div>
+              <div class="card__noise" aria-hidden="true"></div>
+              <button class="carousel__nav carousel__nav--prev mono" type="button" aria-label="Previous image">‹</button>
+              <button class="carousel__nav carousel__nav--next mono" type="button" aria-label="Next image">›</button>
+              <div class="carousel__dots" role="tablist" aria-label="Image navigation"></div>
+            </figure>
+
+            <div class="card__panel mono">
+              <!-- ===== CHANGE PROJECT TEXT HERE ===== -->
+              <h2 class="card__index" id="p4-title" data-i18n="p4_index">CH.04 // PARASOL</h2>
+              <ul class="telemetry" data-telemetry>
+                <li class="telemetry__row"><span class="telemetry__key" data-i18n="k_theme">[THEME]</span><span class="telemetry__val" data-decode data-i18n="p4_theme">Commercial_Styling_·_Total_Look</span></li>
+                <li class="telemetry__row"><span class="telemetry__key" data-i18n="k_workflow">[WORKFLOW]</span><span class="telemetry__val" data-decode data-i18n="p4_workflow">Styling_Design_·_Consulting</span></li>
+              </ul>
+              <a class="card__decoded card__decoded--link" data-i18n="p4_decoded"
+                 href="https://www.yoreh.com.tw/pages/about" rel="noopener" target="_blank">signal_locked · yoreh_in_market</a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.tunnel__stage -->
+    </section>
+
+    <!-- ==========================================================
+         OUTRO — code fragments converge into the email
+         ========================================================== -->
+    <section id="outro" class="outro" aria-label="Contact">
+      <canvas id="convergence" class="outro__canvas" aria-hidden="true"></canvas>
+
+      <div class="outro__content">
+        <!-- ===== YOUR PORTRAIT / PROFILE PHOTO ===== -->
+        <figure class="outro__portrait">
+          <img src="img/7.jpg" alt="Sara — Rouge chauD" loading="lazy" />
+        </figure>
+
+        <p class="outro__label mono" data-i18n="outro_label">transmission_end // reach_me</p>
+
+        <!-- ===== CHANGE YOUR EMAIL HERE ===== -->
+        <a class="outro__email" href="mailto:7chaud@gmail.com">7chaud@gmail.com</a>
+
+        <span class="outro__cursor" aria-hidden="true"></span>
+
+        <!-- ===== NAME / STUDIO SIGNATURE ===== -->
+        <p class="outro__name mono" data-i18n="signature">Sara · Visual Director</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
