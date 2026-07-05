@@ -475,8 +475,14 @@ a {
   gap: var(--space-3);
   white-space: nowrap;
 }
-.telemetry__key { color: var(--color-accent); min-width: 9ch; }
-.telemetry__val { color: var(--color-ink); overflow: hidden; text-overflow: ellipsis; }
+.telemetry__key { color: var(--color-accent); min-width: 9ch; flex: none; }
+/* value wraps to a second line instead of clipping long workflows */
+.telemetry__val {
+  color: var(--color-ink);
+  white-space: normal;
+  min-width: 0;
+  word-break: break-word;
+}
 
 /* decoded line(s) — hidden until lock-in */
 .card__decoded {
@@ -816,8 +822,9 @@ a.card__decoded--link:hover {
    ================================================================ */
 @media (max-width: 767px) {
 
-  /* kill heavy renderers */
-  .particle-field { display: none; }
+  /* keep the ambient dust (lighter count via JS), but sit it behind the
+     in-flow cards and dial it back a touch */
+  .particle-field { z-index: -1; opacity: 0.45; }
   .atmo--grain    { animation: none; opacity: 0.04; }
 
   /* tunnel collapses into normal document flow */

@@ -36,6 +36,8 @@ const CONFIG = {
   /* ambient particles */
   particleCount:     70,
   fragmentCount:     14,      // floating code fragments
+  particleCountMobile: 34,    // lighter dust count on phones
+  fragmentCountMobile: 7,     // lighter code fragments on phones
   fragmentChars:     "01<>/{}[]#*+=~;:._",
 
   /* decode effect */
@@ -414,19 +416,23 @@ const field = {
   dpr: 1,
 
   init() {
-    if (!state.isDesktop || state.reduced) return;
+    if (state.reduced) return;
     this.dpr = Math.min(window.devicePixelRatio || 1, 2);
     this.resize();
     this.ctx = els.field.getContext("2d");
 
-    this.dots = Array.from({ length: CONFIG.particleCount }, () => ({
+    // phones run a lighter dust/fragment count to keep the frame budget
+    const dotCount  = state.isDesktop ? CONFIG.particleCount : CONFIG.particleCountMobile;
+    const fragCount = state.isDesktop ? CONFIG.fragmentCount : CONFIG.fragmentCountMobile;
+
+    this.dots = Array.from({ length: dotCount }, () => ({
       x: Math.random(), y: Math.random(),
       r: 0.6 + Math.random() * 1.4,
       vy: 0.00012 + Math.random() * 0.0004,
       flicker: Math.random() * Math.PI * 2,
     }));
 
-    this.frags = Array.from({ length: CONFIG.fragmentCount }, () => ({
+    this.frags = Array.from({ length: fragCount }, () => ({
       x: Math.random(), y: Math.random(),
       vy: 0.0003 + Math.random() * 0.0006,
       char: CONFIG.fragmentChars[(Math.random() * CONFIG.fragmentChars.length) | 0],
@@ -647,10 +653,12 @@ els.langToggle.addEventListener("click", () => {
    10. ANIMATION LOOP — one rAF for everything (≈60 FPS budget)
    ================================================================ */
 function loop(time) {
-  if (state.isDesktop && !state.reduced) {
-    updateHero();
-    updateTunnel();
-    field.draw(time);
+  if (!state.reduced) {
+    if (state.isDesktop) {
+      updateHero();
+      updateTunnel();
+    }
+    field.draw(time);   // ambient dust runs on desktop + mobile
   }
   outro.draw(time);
   state.rafId = requestAnimationFrame(loop);
@@ -731,11 +739,8 @@ function init() {
   measure();
   initCarousels();
 
-  if (state.isDesktop && !state.reduced) {
-    field.init();
-  } else {
-    initMobile();                                    // fade & float mode
-  }
+  if (!state.reduced) field.init();                  // ambient dust (both)
+  if (!state.isDesktop) initMobile();                // fade & float mode
 
   initOutroObserver();
 
