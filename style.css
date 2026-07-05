@@ -782,6 +782,25 @@ a.card__decoded--link:hover {
   to   { opacity: 1; transform: translate3d(0, 0, 0)   scale(1); }
 }
 
+/* mobile card entrance — echoes the desktop tunnel: the card emerges
+   from depth (tilted, blurred, pushed back on Z) and rushes forward. */
+@keyframes window-emerge {
+  0% {
+    opacity: 0;
+    transform: perspective(900px) translate3d(0, 34px, -320px) rotateX(9deg) scale(0.94);
+    filter: blur(5px);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(900px) translate3d(0, 0, 0) rotateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
 /* lightweight CSS glitch used on mobile before decode completes */
 @keyframes mobile-glitch {
   0%, 88%, 100% { transform: translate3d(0, 0, 0); opacity: 1; }
@@ -825,9 +844,11 @@ a.card__decoded--link:hover {
 
   .card { width: 100%; }
 
-  /* entrance: rise upward, fade in, scale 96% → 100% */
+  /* entrance: card emerges from depth and rushes toward the viewer,
+     mirroring the desktop 3D tunnel */
   .card--enter {
-    animation: rise-in 900ms var(--ease-out) both;
+    transform-origin: 50% 60%;
+    animation: window-emerge 1000ms var(--ease-out) both;
   }
 
   /* lightweight glitch replaces the full glitch stack */
