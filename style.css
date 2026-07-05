@@ -200,6 +200,7 @@ a {
   display: flex;
   align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
+  margin-left: auto;   /* keep controls right-aligned after logo removal */
 }
 
 /* ---- language toggle (EN / 中) ---------------------------------- */
