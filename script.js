@@ -84,7 +84,7 @@ const TRANSLATIONS = {
     p3_index:    "CH.03 // ARTIST",
     p3_theme:    "Commercial Styling · Artist",
     p3_workflow: "Styling Design · Consulting",
-    p3_decoded:  "signal locked · artist jane liu",
+    p3_decoded:  "signal locked · artist liu yiiiiiii",
 
     p4_index:    "CH.04 // PARASOL",
     p4_theme:    "Commercial Styling · Total Look",
@@ -124,7 +124,7 @@ const TRANSLATIONS = {
     p3_index:    "第03章 // 藝術家",
     p3_theme:    "商業造型 · 藝術家形象",
     p3_workflow: "造型設計 · 顧問諮詢",
-    p3_decoded:  "訊號鎖定 · 藝術家 Jane Liu",
+    p3_decoded:  "訊號鎖定 · 藝術家 Liu Yiiiiiii",
 
     p4_index:    "第04章 // 傘",
     p4_theme:    "商業造型 · 整體造型",
